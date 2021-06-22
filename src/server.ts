@@ -1,13 +1,12 @@
+import 'reflect-metadata'
 import express from 'express';
+import './database';
+import { router as UserRoutes } from './routes/user.routes';
 
 const app = express();
 
-app.get('/test', (request, response) => {
-	return response.send('Olá NLW');
-});
+app.use(express.json());
 
-app.post('/test-post', (request, response) => {
-	return response.send('Olá NLW metodo post');
-})
+app.use('/users', UserRoutes);
 
 app.listen(3000, () => console.log('Server is running'));

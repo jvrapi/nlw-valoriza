@@ -1,2 +1,2 @@
 # NLW Valoriza
-App criada durante a semana NLW Together
+API criada durante a semana NLW Together
