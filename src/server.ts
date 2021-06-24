@@ -2,13 +2,14 @@ import 'reflect-metadata'
 import './database';
 import 'express-async-errors'
 import express, { Request, Response, NextFunction } from 'express';
-import { router as UserRoutes } from './routes/user.routes';
+import { router } from './routes';
+
 
 const app = express();
 
 app.use(express.json());
 
-app.use('/users', UserRoutes);
+app.use(router);
 
 app.use((err: Error, request: Request, response: Response, next: NextFunction) => {
 	if (err instanceof Error) {
