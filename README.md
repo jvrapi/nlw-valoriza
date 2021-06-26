@@ -1,5 +1,6 @@
 <h1 align="center"> 
-	NLW Valoriza 
+<img src="./src/assets/nlw-together-logo.svg" alt="NLW Together">
+
 </h1>
 
 <p align="center">
