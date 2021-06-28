@@ -1,5 +1,5 @@
-import { Request, Response } from 'express'
-import { CreateComplimentsService } from '../services/CreateComplimentsService'
+import { Request, Response } from 'express';
+import { CreateComplimentsService } from '../services/CreateComplimentsService';
 
 class CreateComplimentController {
 	async handle(request: Request, response: Response) {
@@ -14,8 +14,8 @@ class CreateComplimentController {
 			message
 		});
 
-		return response.json(compliments)
+		return response.json(compliments);
 	}
 }
 
-export { CreateComplimentController }
+export { CreateComplimentController };

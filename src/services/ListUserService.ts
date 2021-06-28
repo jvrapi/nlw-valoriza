@@ -1,6 +1,6 @@
-import { getCustomRepository } from "typeorm";
-import { UsersRepositories } from "../repositories/UsersRepositories";
-import { classToPlain } from 'class-transformer'
+import { getCustomRepository } from 'typeorm';
+import { UsersRepositories } from '../repositories/UsersRepositories';
+import { classToPlain } from 'class-transformer';
 
 class ListUserService {
 	async execute() {
@@ -10,4 +10,4 @@ class ListUserService {
 	}
 }
 
-export { ListUserService }
+export { ListUserService };

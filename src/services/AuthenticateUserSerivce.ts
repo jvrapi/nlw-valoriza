@@ -1,10 +1,10 @@
-import { UsersRepositories } from "../repositories/UsersRepositories";
+import { UsersRepositories } from '../repositories/UsersRepositories';
 
 import { getCustomRepository } from 'typeorm';
 
 import { compare } from 'bcryptjs';
 
-import { sign } from 'jsonwebtoken'
+import { sign } from 'jsonwebtoken';
 
 interface AuthenticateRequest {
 	email: string;
@@ -13,7 +13,6 @@ interface AuthenticateRequest {
 
 class AuthenticateUserService {
 	async execute({ email, password }: AuthenticateRequest) {
-
 		const usersRepositories = getCustomRepository(UsersRepositories);
 
 		const user = await usersRepositories.findOne({ email });
@@ -30,15 +29,15 @@ class AuthenticateUserService {
 
 		const token = sign(
 			{ email: user.email },
-			"29159c9a9815579c55712f569eb56ef0",
+			'29159c9a9815579c55712f569eb56ef0',
 			{
 				subject: user.id,
 				expiresIn: '1d'
 			}
-		)
+		);
 
 		return token;
 	}
 }
 
-export { AuthenticateUserService }
+export { AuthenticateUserService };

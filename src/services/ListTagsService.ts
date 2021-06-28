@@ -1,9 +1,8 @@
-import { getCustomRepository } from "typeorm"
-import { TagsRepositories } from "../repositories/TagsRepositories";
-import { classToPlain } from 'class-transformer'
+import { getCustomRepository } from 'typeorm';
+import { TagsRepositories } from '../repositories/TagsRepositories';
+import { classToPlain } from 'class-transformer';
 
 class ListTagsService {
-
 	async execute() {
 		const tagsRepositories = getCustomRepository(TagsRepositories);
 
@@ -12,8 +11,6 @@ class ListTagsService {
 		// campo customizado
 		return classToPlain(tags);
 	}
-
-
 }
 
-export { ListTagsService }
+export { ListTagsService };

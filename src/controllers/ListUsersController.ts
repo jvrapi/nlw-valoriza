@@ -1,8 +1,7 @@
-import { Request, Response } from "express";
-import { ListUserService } from "../services/ListUserService";
+import { Request, Response } from 'express';
+import { ListUserService } from '../services/ListUserService';
 
 class ListUsersController {
-
 	async handle(request: Request, response: Response) {
 		const listUserService = new ListUserService();
 		const users = await listUserService.execute();
@@ -10,4 +9,4 @@ class ListUsersController {
 	}
 }
 
-export { ListUsersController }
+export { ListUsersController };

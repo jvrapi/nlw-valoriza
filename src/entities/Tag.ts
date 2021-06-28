@@ -1,5 +1,11 @@
-import { Entity, Column, PrimaryColumn, CreateDateColumn, UpdateDateColumn } from 'typeorm';
-import { v4 as uuid } from 'uuid'
+import {
+	Entity,
+	Column,
+	PrimaryColumn,
+	CreateDateColumn,
+	UpdateDateColumn
+} from 'typeorm';
+import { v4 as uuid } from 'uuid';
 import { Expose } from 'class-transformer';
 @Entity('tags')
 class Tag {
@@ -18,7 +24,7 @@ class Tag {
 	// Campo customizado
 	@Expose({ name: 'name_custom' })
 	nameCustom(): string {
-		return `#${this.name}`
+		return `#${this.name}`;
 	}
 
 	constructor() {
@@ -26,7 +32,6 @@ class Tag {
 			this.id = uuid();
 		}
 	}
-
 }
 
-export { Tag }
+export { Tag };

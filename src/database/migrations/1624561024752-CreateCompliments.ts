@@ -1,10 +1,9 @@
-import { MigrationInterface, QueryRunner, Table } from "typeorm";
+import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
 export class CreateCompliments1624561024752 implements MigrationInterface {
-
 	public async up(queryRunner: QueryRunner): Promise<void> {
-		await queryRunner.createTable(new Table(
-			{
+		await queryRunner.createTable(
+			new Table({
 				name: 'compliments',
 				columns: [
 					{
@@ -32,7 +31,7 @@ export class CreateCompliments1624561024752 implements MigrationInterface {
 						name: 'created_at',
 						type: 'timestamp',
 						default: 'now()'
-					},
+					}
 				],
 				foreignKeys: [
 					{
@@ -58,14 +57,13 @@ export class CreateCompliments1624561024752 implements MigrationInterface {
 						columnNames: ['tag_id'],
 						onDelete: 'CASCADE',
 						onUpdate: 'CASCADE'
-					},
+					}
 				]
-			}
-		));
+			})
+		);
 	}
 
 	public async down(queryRunner: QueryRunner): Promise<void> {
-		await queryRunner.dropTable('compliments')
+		await queryRunner.dropTable('compliments');
 	}
-
 }

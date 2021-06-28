@@ -16,26 +16,44 @@ const createTagController = new CreateTagController();
 const createUserController = new CreateUserController();
 const authenticateUserController = new AuthenticateUserController();
 const createComplimentController = new CreateComplimentController();
-const listUserSendComplimentsController = new ListUserSendComplimentsController();
-const listUserReceiveComplimentsController = new ListUserReceiveComplimentsController();
+const listUserSendComplimentsController =
+	new ListUserSendComplimentsController();
+const listUserReceiveComplimentsController =
+	new ListUserReceiveComplimentsController();
 const listTagsController = new ListTagsController();
 const listUsersController = new ListUsersController();
-
 
 /**
  *  Todas as rotas abaixo do route.use usariam o middleware
  * e precisariam ser um admim
- * 
+ *
  * router.use(ensureAdmin)
  *
  */
 
-router.post('/tags', ensureAuthenticate, ensureAdmin, createTagController.handle);
+router.post(
+	'/tags',
+	ensureAuthenticate,
+	ensureAdmin,
+	createTagController.handle
+);
 router.post('/users', createUserController.handle);
 router.post('/login', authenticateUserController.handle);
-router.post('/compliments', ensureAuthenticate, createComplimentController.handle);
-router.get('/users/compliments/send', ensureAuthenticate, listUserSendComplimentsController.handle);
-router.get('/users/compliments/receive', ensureAuthenticate, listUserReceiveComplimentsController.handle);
+router.post(
+	'/compliments',
+	ensureAuthenticate,
+	createComplimentController.handle
+);
+router.get(
+	'/users/compliments/send',
+	ensureAuthenticate,
+	listUserSendComplimentsController.handle
+);
+router.get(
+	'/users/compliments/receive',
+	ensureAuthenticate,
+	listUserReceiveComplimentsController.handle
+);
 router.get('/tags', ensureAuthenticate, listTagsController.handle);
 router.get('/users', ensureAuthenticate, listUsersController.handle);
-export { router }
+export { router };
